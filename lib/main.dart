@@ -110,6 +110,7 @@ class SearchPage extends StatelessWidget {
                 return Divider();
               },
               itemBuilder: (context, index) {
+                if (bookService.bookList.isEmpty) return SizedBox();
                 Book book = bookService.bookList.elementAt(index);
                 return ListTile(
                   onTap: () {},

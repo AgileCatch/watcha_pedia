@@ -1,10 +1,17 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'book.dart';
+import 'main.dart';
 
 class BookService extends ChangeNotifier {
   List<Book> bookList = [];
   List<Book> likedBookList = []; // 책 목록
+
+  BookService() {
+    loadLikedBookList();
+  }
 
   void toggleLikeBook({required Book book}) {
     String bookId = book.id;
@@ -14,6 +21,7 @@ class BookService extends ChangeNotifier {
       likedBookList.add(book);
     }
     notifyListeners();
+    saveLikedBookList();
   }
 
   void search(String q) async {
@@ -31,7 +39,7 @@ class BookService extends ChangeNotifier {
           title: item['volumeInfo']['title'] ?? "",
           subtitle: item['volumeInfo']['subtitle'] ?? "",
           publishedDate: item['volumeInfo']['publishedDate'] ?? "",
-          authors: List<String>.from(item['volumeInfo']['authors'] ?? []),
+          authors: List.from(item['volumeInfo']['authors'] ?? []),
           thumbnail: item['volumeInfo']['imageLinks']?['thumbnail'] ??
               "https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg",
           previewLink: item['volumeInfo']['previewLink'] ?? "",
@@ -40,5 +48,29 @@ class BookService extends ChangeNotifier {
       }
     }
     notifyListeners();
+  }
+
+  saveLikedBookList() {
+    List likedBookJsonList =
+        likedBookList.map((book) => book.toJson()).toList();
+    // [{"content": "1"}, {"content": "2"}]
+
+    String jsonString = jsonEncode(likedBookJsonList);
+    // '[{"content": "1"}, {"content": "2"}]'
+
+    prefs.setString('likedBookList', jsonString);
+  }
+
+  loadLikedBookList() {
+    String? jsonString = prefs.getString('likedBookList');
+    // '[{"content": "1"}, {"content": "2"}]'
+
+    if (jsonString == null) return; // null 이면 로드하지 않음
+
+    List likedBookJsonList = jsonDecode(jsonString);
+    // [{"content": "1"}, {"content": "2"}]
+
+    likedBookList =
+        likedBookJsonList.map((json) => Book.fromJson(json)).toList();
   }
 }

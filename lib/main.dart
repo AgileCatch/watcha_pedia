@@ -113,7 +113,9 @@ class SearchPage extends StatelessWidget {
               itemBuilder: (context, index) {
                 if (bookService.bookList.isEmpty) return SizedBox();
                 Book book = bookService.bookList.elementAt(index);
-                return BookTile(book: book);
+                return BookTile(
+                  book: book,
+                );
               },
             ),
           ),
@@ -155,7 +157,7 @@ class BookTile extends StatelessWidget {
         style: TextStyle(fontSize: 16),
       ),
       subtitle: Text(
-        book.subtitle,
+        book.publishedDate,
         style: TextStyle(color: Colors.grey),
       ),
       trailing: IconButton(

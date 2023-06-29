@@ -31,6 +31,7 @@ class BookService extends ChangeNotifier {
           id: item['id'],
           title: item['volumeInfo']['title'] ?? "",
           subtitle: item['volumeInfo']['subtitle'] ?? "",
+          publishedDate: item['volumeInfo']['publishdeDate'] ?? "",
           thumbnail: item['volumeInfo']['imageLinks']?['thumbnail'] ??
               "https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg",
           previewLink: item['volumeInfo']['previewLink'] ?? "",

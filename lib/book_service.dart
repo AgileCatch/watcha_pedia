@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-
 import 'book.dart';
 
 class BookService extends ChangeNotifier {
@@ -31,7 +30,8 @@ class BookService extends ChangeNotifier {
           id: item['id'],
           title: item['volumeInfo']['title'] ?? "",
           subtitle: item['volumeInfo']['subtitle'] ?? "",
-          publishedDate: item['volumeInfo']['publishdeDate'] ?? "",
+          publishedDate: item['volumeInfo']['publishedDate'] ?? "",
+          authors: List<String>.from(item['volumeInfo']['authors'] ?? []),
           thumbnail: item['volumeInfo']['imageLinks']?['thumbnail'] ??
               "https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg",
           previewLink: item['volumeInfo']['previewLink'] ?? "",

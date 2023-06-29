@@ -183,27 +183,27 @@
     },
     {
       "name": "webview_flutter",
-      "rootUri": "file:///Users/gim-yeonghyeon/.pub-cache/hosted/pub.dev/webview_flutter-4.2.2",
+      "rootUri": "file:///Users/gim-yeonghyeon/.pub-cache/hosted/pub.dev/webview_flutter-3.0.4",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "2.14"
     },
     {
       "name": "webview_flutter_android",
-      "rootUri": "file:///Users/gim-yeonghyeon/.pub-cache/hosted/pub.dev/webview_flutter_android-3.8.0",
+      "rootUri": "file:///Users/gim-yeonghyeon/.pub-cache/hosted/pub.dev/webview_flutter_android-2.10.4",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "2.14"
     },
     {
       "name": "webview_flutter_platform_interface",
-      "rootUri": "file:///Users/gim-yeonghyeon/.pub-cache/hosted/pub.dev/webview_flutter_platform_interface-2.3.1",
+      "rootUri": "file:///Users/gim-yeonghyeon/.pub-cache/hosted/pub.dev/webview_flutter_platform_interface-1.9.5",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "2.12"
     },
     {
       "name": "webview_flutter_wkwebview",
-      "rootUri": "file:///Users/gim-yeonghyeon/.pub-cache/hosted/pub.dev/webview_flutter_wkwebview-3.6.0",
+      "rootUri": "file:///Users/gim-yeonghyeon/.pub-cache/hosted/pub.dev/webview_flutter_wkwebview-2.9.5",
       "packageUri": "lib/",
-      "languageVersion": "2.18"
+      "languageVersion": "2.17"
     },
     {
       "name": "watcha_pedia",
@@ -212,7 +212,7 @@
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-06-29T07:52:37.667008Z",
+  "generated": "2023-06-29T08:40:23.902555Z",
   "generator": "pub",
   "generatorVersion": "3.0.5"
 }

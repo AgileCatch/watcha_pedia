@@ -7,6 +7,8 @@ class BookService extends ChangeNotifier {
   List<Book> bookList = []; // 책 목록
 
   void search(String q) async {
+    bookList.clear(); // 검색 버튼 누를때 이전 데이터들을 지워주기
+
     if (q.isNotEmpty) {
       Response res = await Dio().get(
         "https://www.googleapis.com/books/v1/volumes?q=$q&startIndex=0&maxResults=40",

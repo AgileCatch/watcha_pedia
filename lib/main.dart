@@ -174,13 +174,13 @@ class LikedBookPage extends StatelessWidget {
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: ListView.separated(
-              itemCount: bookService.bookList.length,
+              itemCount: bookService.likedBookList.length,
               separatorBuilder: (context, index) {
                 return Divider();
               },
               itemBuilder: (context, index) {
-                if (bookService.bookList.isEmpty) return SizedBox();
-                Book book = bookService.bookList.elementAt(index);
+                if (bookService.likedBookList.isEmpty) return SizedBox();
+                Book book = bookService.likedBookList.elementAt(index);
                 return BookTile(book: book);
               },
             ),
